@@ -6,7 +6,7 @@ double dist(double x1, double y1, double x2, double y2){
 
 int main(void){
 	int N,a,i;
-	while( scanf("%d %d",&N, &a) ){
+	while( scanf("%d %d",&N, &a) != EOF ){
 		if(N == 0 || a == 0) break;
 		int M = 0;
 		double p=a*a;
