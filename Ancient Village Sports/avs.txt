@@ -1,0 +1,42 @@
+In an ancient village there lived a number of people
+who liked different sorts of sports very much.
+But there was no built-in sports-ground. So
+they started looking for places. Ultimately what
+they found were the surfaces of the rocks with
+a shape of a regular polygon. Since the spectators
+are the part and parcel of the game, they
+must have some place over the ground. Again,
+officials of the teams must also have some space.
+They chose the in circle or striped portion of the
+regular polygon as the playing ground. They
+decided to leave the dotted portion as indicated
+in the figure for spectators and the criss-crossed
+portion for the officials. The diagonally striped
+portion is used for playing the game. You are
+going to help them to find the area of these portions.
+A polygon is regular if all its sides are equal
+and all its angles are equal. Either of the conditions
+implies the other in the case of a triangle, but not in general. A rhombus has equal sides but not
+necessarily equal angles, and a rectangle has equal angles but not necessarily equal sides. So rhombus
+and rectangle are not regular polygons.
+You are given the area (A) of an n-sided regular polygon. You are to determine the total area for
+the spectators and the total area for the officials. Assume that π = 2 ∗ cos−1
+(0).
+Input
+In each line of the input file there is an integer n (0 < n ≤ 50) and a floating-point number A
+(0 ≤ A ≤ 30000). A line with the value of n is less than three, terminates the input.
+Output
+For each line of input (except the last one) you should produce one line of output. This line contains
+the serial no of output as shown in the sample output followed by two floating-point numbers separated
+by a single space. The first one gives the area for the spectators and the second one gives that of
+the officials. There is also a single space between the colon and first floating point number. The
+floating-point numbers has five digits after the decimal point.
+Sample Input
+3 0.43301
+6 2.59808
+9 6.18182
+0 2.33333
+Sample Output
+Case 1: 0.61418 0.17121
+Case 2: 0.54352 0.24188
+Case 3: 0.53226 0.25314
