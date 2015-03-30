@@ -1,0 +1,51 @@
+For example, Fig. 1 represents a fully binary tree of maximum depth 4 with the node numbers 1, 2, 3, ..., 15. Since all of the flags are initially set to be false, the first ball being dropped will switch flag's values at node 1, node 2, and node 4 before it finally stops at position 8. The second ball being dropped will switch flag's values at node 1, node 3, and node 6, and stop at position 12. Obviously, the third ball being dropped will switch flag's values at node 1, node 2, and node 5 before it stops at position 10.
+
+Fig. 1: An example of FBT with the maximum depth 4 and sequential node numbers.
+
+Now consider a number of test cases where two values will be given for each test. The first value is D, the maximum depth of FBT, and the second one is I, the Ith ball being dropped. You may assume the value of I will not exceed the total number of leaf nodes for the given FBT.
+
+Please write a program to determine the stop position P for each test case.
+
+For each test cases the range of two parameters D and I is as below: 
+
+\begin{displaymath}2 \le D \le 20, \mbox{ and } 1 \le I \le 524288.
+\end{displaymath}
+
+Input 
+
+Contains l+2 lines.
+
+Line 1 		 I the number of test cases 
+Line 2 		 $D_1 \ I_1$
+test case #1, two decimal numbers that are separatedby one blank 
+... 		 		 
+Line k+1 $D_k \ I_k$
+test case #k 
+Line l+1 $D_l \ I_l$
+test case #l 
+Line l+2 -1 		 a constant -1 representing the end of the input file
+Output 
+
+Contains l lines.
+
+Line 1 		 the stop position P for the test case #1 
+... 		 
+Line k the stop position P for the test case #k 
+... 		 
+Line l the stop position P for the test case #l
+Sample Input 
+
+5
+4 2
+3 4
+10 1
+2 2
+8 128
+-1
+Sample Output 
+
+12
+7
+512
+3
+255
