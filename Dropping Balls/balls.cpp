@@ -1,19 +1,19 @@
-#include <cstdio>
+#include <stdio.h>
 
 int main(void){
-	int n, depth, ballNum;
+	int n, depth, ballNum,i;
 	scanf("%d", &n);
 	while(n--){
 		scanf("%d %d", &depth, &ballNum);
-		int out = 0;
+		int x = 0;
 		ballNum--;
-		for(int i = 1; i < depth; ++i){
-			out <<= 1;
-			out |= (ballNum & 1);
+		for(i = 1; i < depth; ++i){
+			x <<= 1;
+			x |= (ballNum & 1);
 			ballNum >>= 1;
 		}
-		out += (1 << (depth-1));
-		printf("%d\n", out);
+		x += (1 << (depth-1));
+		printf("%d\n", x);
 	}
 	return 0;
 }

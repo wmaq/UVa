@@ -1,26 +1,26 @@
 #include <stdio.h>
 
 struct Node{
-    int M, D;
+    int a, b;
 }left, mid, right;
 
 int main(void){
-    int m,n;
-    while (scanf("%d %d",&m,&n)){
-        if (m==1 && n==1) break;
-        while (1){
-            long double temp1 = (long double)m/n
-            long double temp2 = (long double)mid.M/mid.D;
+    int x,y;
+    while (scanf("%d %d",&x,&y)){
+        if (x==1 && y==1) break;
+        while(1){
+            long double temp1 = (long double)x/y;
+            long double temp2 = (long double)mid.a/mid.b;
             if (temp1 < temp2){
                 printf("L");
                 right = mid;
-                mid.M += left.M;
-                mid.D += left.D;
+                mid.a += left.a;
+                mid.b += left.b;
             } else if (temp1 > temp2) {
                 printf("R");
                 left = mid;
-                mid.M += right.M;
-                mid.D += right.D;
+                mid.a += right.a;
+                mid.b += right.b;
             } else {               
                 printf("\n");
                 break;
