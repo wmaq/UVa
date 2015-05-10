@@ -1,4 +1,4 @@
-Solving UVa problems
+Solving UVa problems - [Link](http://algorithmist.com/index.php/Category:UVa_Online_Judge)
 ------
 1. **Sorting** - [Link](http://www.algorithmist.com/index.php/Sorting)
 
@@ -33,3 +33,4 @@ Solving UVa problems
 	* 127 - "Accordian" Patience - [Solution](https://github.com/wmaq/UVa/tree/master/Accordian%20Patience) - [UVa](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=63)
 	* 10931 - Parity - [Solution](https://github.com/wmaq/UVa/tree/master/Parity) - [UVa](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1872)
 	* 594 - One Little, Two Little, Three Little Endians - [Solution](https://github.com/wmaq/UVa/tree/master/Accordian%20Patience) - [UVa](http://uva.onlinejudge.org/external/5/534.html)
+	* 10927 - Bright Lights - [Solution](https://github.com/wmaq/UVa/tree/master/Bright%20Lights) - [UVa](http://uva.onlinejudge.org/external/109/10927.pdf)
