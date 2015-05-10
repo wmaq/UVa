@@ -39,7 +39,7 @@ void solve(void){
 	qsort(arr, n, sizeof(struct Point), &compareY);
 	while(yCnt < n && !arr[yCnt].y) yCnt++;
 	if(!yCnt) return;
-	while(++sub < yCnt && arr[++sub].x < 0) ++sub;
+	while(sub+1 < yCnt && arr[sub+1].x < 0) sub++;
 	for(t = sub; t >= 0; t--){
 		if(arr[t].z <= height) hidden[m++] = arr[t];
 		else height = arr[t].z;
@@ -70,21 +70,21 @@ void solve(void){
 int main(void){
 	int cnt, ay;
 	for(cnt = 1; scanf("%d", &n) == 1 && n; cnt++){
-		printf("Data set %d:\n", cnt);
 		m = 0;
-		for(ay = 0; ay < n; ++ay){
+		for(ay = 0; ay < n; ay++){
 			scanf("%d %d %d", &arr[ay].x, &arr[ay].y, &arr[ay].z);
 			if(!arr[ay].x && !arr[ay].y){
 				ay--, n--;
 			}
 		}
 		solve();
+		printf("Data set %d:\n", cnt);
 		if(m == 0) printf("All the lights are visible.\n");
 		else {
 			printf("Some lights are not visible:\n");
 			qsort(hidden, m, sizeof(struct Point), &compareX);
 			for(ay = 0; ay < m; ay++){
-				printf("x = %d, y = %d%c\n", hidden[ay].x, hidden[ay].y, ((++ay) < m) ? ';' : '.');
+				printf("x = %d, y = %d%c\n", hidden[ay].x, hidden[ay].y, ((ay+1) < m) ? ';' : '.');
 			}
 		}
 	}
