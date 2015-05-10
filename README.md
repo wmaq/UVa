@@ -12,15 +12,15 @@ Solving UVa problems
 4. **Dynamic Programming** - http://www.algorithmist.com/index.php/Dynamic_Programming
 	*
 	*
-5. **Greedy** - http://www.algorithmist.com/index.php/Greedy
+5. **Data Structures** - http://www.algorithmist.com/index.php/Data_Structures
 	*
 	*
 6. **Computational Geometry** - http://www.algorithmist.com/index.php/Computational_Geometry
-	*
-	*
+	* 10242 - Fourth Point [Solution](https://github.com/wmaq/UVa/tree/master/Fourth%20Point) - [UVa](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1183)
+	* 10473 - Simple Base Conversion [Solution](https://github.com/wmaq/UVa/tree/master/Simple%20Base%20Conversion) - [UVa](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1414)
 7. **Number Theory** - http://www.algorithmist.com/index.php/Number_Theory
 	*
 	*
-8. **Data Structures** - http://www.algorithmist.com/index.php/Data_Structures
+8. **String Processing**
 	*
 	*
