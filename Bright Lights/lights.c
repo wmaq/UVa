@@ -33,35 +33,36 @@ int compareB(const void *a, const void *b){
 		return ((struct Point *)a)->y - ((struct Point *)b)->y;
 	}
 }
-void solve(void){
-	int yCnt = 0, sub = 0, t, height = -1;
-	int i, j;
-	qsort(arr, n, sizeof(struct Point), &compareY);
-	while(yCnt < n && !arr[yCnt].y) yCnt++;
-	if(!yCnt) return;
-	while(sub+1 < yCnt && arr[sub+1].x < 0) sub++;
-	for(t = sub; t >= 0; t--){
-		if(arr[t].z <= height) hidden[m++] = arr[t];
+void checkY(void){
+	int sub, t, yCnt, height;
+	qsort(arr, n, sizeof(arr[0]), &compareY);
+	for (yCnt = 0; yCnt < n && arr[yCnt].y == 0; yCnt++);
+	if (yCnt == 0) return;
+	for (sub = 0; (sub+1) < yCnt && arr[sub+1].x < 0; sub++);
+	for (height = -1, t = sub; t >= 0; t--){
+		if (arr[t].z <= height) hidden[m++] = arr[t];
 		else height = arr[t].z;
 	}
-	while(sub < yCnt && arr[sub].x <= 0) sub++;
-	for(height = -1; sub < yCnt; sub++){
-		if(arr[sub].z <= height) hidden[m++] = arr[sub];
+	while (sub < yCnt && arr[sub].x <= 0) sub++;
+	for (height = -1; sub < yCnt; sub++){
+		if (arr[sub].z <= height) hidden[m++] = arr[sub];
 		else height = arr[sub].z;
 	}
-	sub = yCnt, t = 0;
-	while(sub < n) arr[t++] = arr[sub++];
+	for (sub = yCnt, t = 0; sub < n;)
+		arr[t++] = arr[sub++];
 	n = t;
+}
+void useMagic(void){
+	int i, j;
 	for(i = 0; i < n; i++){
 		t = gcd( abs(arr[i].x), arr[i].y);
 		arr[i].bitf = (( abs(arr[i].x) / t )* 10001) + (arr[i].y / t);
 		if(arr[i].x < 0) arr[i].bitf |= 0x80000000;
 	}
-	qsort(arr, n, sizeof(struct Point), &compareB);
+	qsort(arr, n, sizeof(arr[0]), &compareB);
 	for(j = 0; j < n; j = t){
-		for( t = j+1; t < n && arr[t].bitf == arr[j].bitf; t++);
-		i = j;
-		for(height = -1; i < t; i++){
+		for(t = j+1; t < n && arr[t].bitf == arr[j].bitf; t++);
+		for(height = -1, i = j; i < t; i++){
 			if(arr[i].z <= height) hidden[m++] = arr[i];
 			else height = arr[i].z;
 		}
@@ -70,19 +71,19 @@ void solve(void){
 int main(void){
 	int cnt, ay;
 	for(cnt = 1; scanf("%d", &n) == 1 && n; cnt++){
-		m = 0;
-		for(ay = 0; ay < n; ay++){
+		for(ay = m = 0; ay < n; ay++){
 			scanf("%d %d %d", &arr[ay].x, &arr[ay].y, &arr[ay].z);
 			if(!arr[ay].x && !arr[ay].y){
 				ay--, n--;
 			}
 		}
-		solve();
+		checkY();
 		printf("Data set %d:\n", cnt);
+		useMagic();
 		if(m == 0) printf("All the lights are visible.\n");
 		else {
 			printf("Some lights are not visible:\n");
-			qsort(hidden, m, sizeof(struct Point), &compareX);
+			qsort(hidden, m, sizeof(hidden[0]), &compareX);
 			for(ay = 0; ay < m; ay++){
 				printf("x = %d, y = %d%c\n", hidden[ay].x, hidden[ay].y, ((ay+1) < m) ? ';' : '.');
 			}
